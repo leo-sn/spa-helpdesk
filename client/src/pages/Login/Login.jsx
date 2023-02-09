@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./Login.scss";
+import "../Login/Login.scss"
 
 const Login = () => {
 
@@ -11,23 +11,21 @@ const Login = () => {
     };
 
     return (
-        <div className="container">
-            <h1>Log in Form</h1>
-            <div className="">
+        <div className="login-container">
+            <h1 className="login-container--title">Welcome to SPA-HELPDESK</h1>
+            <div className="login-container--form">
                 <h2>Members Log In</h2>
                 <input type="text" placeholder="Email"></input>
                 <input type="text" placeholder="Password"></input>
-                <button>Log In</button>
+                <button className="button--regular">Log In</button>
                 <p>or</p>
-                <button onClick={googleAuth}>
-                    <span>Sign in with Google</span>
-                </button>
+                <button className="button--google" onClick={googleAuth}>
+                    Sign in with Google!
+                </button >
                 <p>
                     New Here? <Link to="/signup">Sign Up</Link>
                 </p>
             </div>
-
-
         </div>
     )
 }

@@ -11,20 +11,20 @@ const Signup = () => {
     };
 
     return (
-        <div className="container">
-            <h1>Sign up Form</h1>
-            <div className="">
+        <div className="login-container">
+            <h1 className="login-container--title">Sign up Form</h1>
+            <div className="login-container--form">
                 <h2>Create Account</h2>
                 <input type="text" placeholder="Username"></input>
                 <input type="text" placeholder="Email"></input>
                 <input type="password" placeholder="Password"></input>
-                <button>Sign up</button>
+                <button className="button--regular">Sign up</button>
                 <p>or</p>
-                <button onClick={googleAuth}>
-                    <span>Sign up with Google</span>
+                <button className="button--google" onClick={googleAuth}>
+                    Sign in with Google!
                 </button>
                 <p>
-                    Already Have Account? <Link to="/signup">Sign In</Link>
+                    Already Have Account? <Link to="/">Sign In</Link>
                 </p>
             </div>
 

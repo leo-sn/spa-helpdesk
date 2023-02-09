@@ -1,0 +1,90 @@
+@use '../../style/partials/breakpoints' as *;
+@import '../../style/partials/colors';
+@import '../../style/partials/fonts';
+
+.login-container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    border-radius: 30px;
+    background-color: $spa-darkgray;
+    padding: 20px;
+    text-align: center;
+
+    &--title {
+        color: white;
+        
+    }
+
+    &--form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        min-width: 30%;
+        width: 90%;
+        max-width: 400px;
+
+    }
+}
+
+input {
+    border-radius: 20px;
+    border: solid 1px transparent;
+    padding: 10px 20px;
+
+    &:focus {
+        outline: 1px solid $spa-red-light;
+    }
+}
+
+.button--regular {
+    width: 100%;
+    background-color: $spa-red;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 30px;
+    border: solid 1px transparent;
+
+    &:hover {
+        background-color: $spa-red-light;
+        cursor: pointer;
+    }
+}
+
+.button--google {
+    width: 100%;
+    background-color: $spa-red;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 30px;
+    border: solid 1px transparent;
+
+    &-icon{
+        background-image: url('../../assets/google-icon.png') no-repeat;
+        width: 45px;
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &:hover {
+        background-color: $spa-red-light;
+        cursor: pointer;
+    }
+}
+
+h2 {
+    color: $spa-white-back;
+}
+
+p {
+    color: $spa-white-back;
+}
+
+a, a:hover, a:active {
+    color: $spa-white;
+    text-decoration: none;
+
+}
