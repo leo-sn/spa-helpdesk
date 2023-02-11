@@ -1,26 +1,30 @@
+import '../Home/Home.scss';
+import SideBar from '../../components/SideBar/SideBar';
+import WorkStation from '../../components/WorkStation/WorkStation';
+import homeIcon from '../../assets/icons/home.png';
+import findARepIcon from '../../assets/icons/user.png';
+import takeANoteIcon from '../../assets/icons/pencil.png';
+import bookARoomIcon from '../../assets/icons/meeting.png';
+
 
 const Home = (userDetails) => {
 
-    const user = userDetails.user;
+    const services = [
+        {title:'HOME', iconPath: homeIcon}, 
+        {title:'FIND-A-REP', iconPath:findARepIcon},
+        {title: 'TAKE-A-NOTE', iconPath:takeANoteIcon},
+        {title:'BOOK-A-ROOM', iconPath:bookARoomIcon}];
 
-    const logout = () => {
-        window.open(
-            `${process.env.REACT_APP_API_URL}/auth/logout`,
-            "_self"
-        );
-    };
-
-    return ( 
-    <div className="container">
-        <h1>Home</h1>
-        <div className="">
-            <h2>Profile</h2>
-            <input type="text" defaultValue={user.name} placeholder="Username"></input>
-            <input type="text" defaultValue={user.email} placeholder="Email"></input>
-            <button onClick={logout}>Logout</button>
-        </div>
-    </div>
+    return (
+        <>
+            <div className='home-container'>
+                <div className='workscreen-container'>
+                    <SideBar currentServices={services} userDetails={userDetails} pageActive={}/>
+                    <WorkStation/>
+                </div>
+            </div>
+        </> 
     )
-};
+}
 
 export default Home;

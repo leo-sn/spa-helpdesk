@@ -4,18 +4,23 @@
 
 .login-container {
 
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 15px;
     border-radius: 30px;
     background-color: $spa-darkgray;
-    padding: 20px;
+    padding: 18px;
     text-align: center;
+    width: 280px;
+    gap: 15px;
 
     &--title {
         color: white;
-        
     }
 
     &--form {
@@ -23,7 +28,7 @@
         flex-direction: column;
         gap: 10px;
         min-width: 30%;
-        width: 90%;
+        width: 100%;
         max-width: 400px;
 
     }
@@ -87,4 +92,12 @@ a, a:hover, a:active {
     color: $spa-white;
     text-decoration: none;
 
+}
+
+@include tablet {
+    .login-container {
+        width: 700px;
+        padding: 20px;
+        gap: 30px;
+    }
 }

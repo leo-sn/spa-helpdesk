@@ -1,0 +1,29 @@
+@use '../../style/partials/breakpoints' as *;
+@import '../../style/partials/colors';
+
+.service-selector {
+
+    height: 50px;
+    width: calc(100% + 7%);
+    background-color: darkgray;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow: black 5px 1px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px 0 10px;
+
+    &--icon {
+        height: 38px;
+        width: 38px;
+    }
+
+    &:hover{
+        background-color: $spa-red-light;
+    }
+}
+
+.active {
+    background-color: $spa-red;
+}

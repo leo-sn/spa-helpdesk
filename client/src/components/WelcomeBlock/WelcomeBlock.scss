@@ -1,0 +1,17 @@
+.welcome-block-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+    width: 100%;
+    height: 200px;
+
+    padding: 30px 5px;
+
+    &--logo {
+        width: 90px;
+        height: 70px;
+        margin: 10px 10px;
+    }
+}
