@@ -1,22 +1,22 @@
-import '../Home/Home.scss';
+import '../TakeANote/TakeANote.scss';
 import SideBar from '../../components/SideBar/SideBar';
-import WorkStation from '../../components/WorkStation/WorkStation';
+import UnderConstruction from '../../components/UncerConstruction/UnderConstruction';
 
 
-const Home = (props) => {
+const TakeANote = (props) => {
 
-    const { userDetails, services } = props
-
+    const { userDetails, services } = props;
+    
     return (
         <>
             <div className='home-container'>
                 <div className='workscreen-container'>
                     <SideBar currentServices={services} userDetails={userDetails} pageActive={' active'}/>
-                    <WorkStation/>
+                    <UnderConstruction/>
                 </div>
             </div>
         </> 
     )
 }
 
-export default Home;
+export default TakeANote;

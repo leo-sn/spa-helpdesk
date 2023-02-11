@@ -1,9 +1,7 @@
 import '../Home/Home.scss';
 import SideBar from '../../components/SideBar/SideBar';
-import WorkStation from '../../components/WorkStation/WorkStation';
 
-
-const Home = (props) => {
+const FindARep = (props) => {
 
     const { userDetails, services } = props
 
@@ -11,12 +9,12 @@ const Home = (props) => {
         <>
             <div className='home-container'>
                 <div className='workscreen-container'>
-                    <SideBar currentServices={services} userDetails={userDetails} pageActive={' active'}/>
-                    <WorkStation/>
+                    <SideBar currentServices={services} userDetails={userDetails} pageActive={''}/>
+                    <h1>Find-A-Rep</h1>
                 </div>
             </div>
         </> 
     )
 }
 
-export default Home;
+export default FindARep;

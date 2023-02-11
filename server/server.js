@@ -34,7 +34,7 @@ app.use(
 const port = process.env.PORT || 8080;
 
 /* ****************** */
-/*       USAGE        */
+/*       ROUTING      */
 /* ****************** */
 
 app.use("/auth", authRoute);

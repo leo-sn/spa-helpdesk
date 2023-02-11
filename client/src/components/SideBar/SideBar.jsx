@@ -6,8 +6,9 @@ import WelcomeBlock from '../WelcomeBlock/WelcomeBlock';
 
 const SideBar = (props) => {
 
-    const { currentServices, userDetails } = props;
-    const user = userDetails.user;
+    const { currentServices, userDetails, pageActive } = props;
+
+    const user = userDetails;
     const logout = () => {
         window.open(
             `${process.env.REACT_APP_API_URL}/auth/logout`,
@@ -19,7 +20,7 @@ const SideBar = (props) => {
         <>
         <div className='sidebar-container'>
             <WelcomeBlock userDetail={user}/>
-            <MenuServices currentServices={currentServices}/>
+            <MenuServices currentServices={currentServices} pageActive={pageActive}/>
             <div className='sidebar-container__bottom-bar'>
                 <div className='sidebar-container__bottom-bar--notification'>
                     <p id='notification-bar'> This notification identify as a very long notification message </p>

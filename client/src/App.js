@@ -3,8 +3,17 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Home from "./pages/Home/Home";
+import FindARep from "./pages/FindARep/FindARep"
+import BookARoom from "./pages/BookARoom/BookARoom"
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
+
+
+//icons:
+import homeIcon from './assets/icons/home.png';
+import findARepIcon from './assets/icons/user.png';
+import takeANoteIcon from './assets/icons/pencil.png';
+import bookARoomIcon from './assets/icons/meeting.png';
 
 
 function App() {
@@ -25,13 +34,39 @@ function App() {
     getUser()
   },[]);
 
+
+  const services = [
+    {title:'HOME', iconPath: homeIcon}, 
+    {title:'FIND-A-REP', iconPath:findARepIcon},
+    {title: 'TAKE-A-NOTE', iconPath:takeANoteIcon},
+    {title:'BOOK-A-ROOM', iconPath:bookARoomIcon}];
+
+
   return (
     <div className="App">
       <Routes>
         <Route 
           exact
           path="/"
-          element={user ? <Home user={user}/> : <Navigate to="/login"/>}>
+          element={user ? <Home userDetails={user} services={services}/> : <Navigate to="/login"/>}>
+        </Route>
+
+        <Route 
+          exact
+          path="/find-a-rep"
+          element={user ? <FindARep userDetails={user} services={services}/> : <Navigate to="/login"/>}>
+        </Route>
+
+        <Route 
+          exact
+          path="/take-a-note"
+          element={user ? <FindARep userDetails={user} services={services}/> : <Navigate to="/login"/>}>
+        </Route>
+
+        <Route 
+          exact
+          path="/book-a-room"
+          element={user ? <BookARoom userDetails={user} services={services}/> : <Navigate to="/login"/>}>
         </Route>
 
         <Route 
