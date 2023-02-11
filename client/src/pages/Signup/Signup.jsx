@@ -27,8 +27,6 @@ const Signup = () => {
                     Already Have Account? <Link to="/">Sign In</Link>
                 </p>
             </div>
-
-
         </div>
     )
 }

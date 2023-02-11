@@ -9,7 +9,7 @@ const FindARep = (props) => {
         <>
             <div className='home-container'>
                 <div className='workscreen-container'>
-                    <SideBar currentServices={services} userDetails={userDetails} pageActive={''}/>
+                    <SideBar currentServices={services} userDetails={userDetails} pageActive={'find-a-rep'}/>
                     <h1>Find-A-Rep</h1>
                 </div>
             </div>

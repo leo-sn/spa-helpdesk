@@ -10,7 +10,7 @@ const BookARoom = (props) => {
         <>
             <div className='home-container'>
                 <div className='workscreen-container'>
-                    <SideBar currentServices={services} userDetails={userDetails} pageActive={' active'}/>
+                    <SideBar currentServices={services} userDetails={userDetails} pageActive={'book-a-room'}/>
                     <UnderConstruction/>
                 </div>
             </div>

@@ -1,10 +1,11 @@
 import './App.scss';
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Home from "./pages/Home/Home";
 import FindARep from "./pages/FindARep/FindARep"
 import BookARoom from "./pages/BookARoom/BookARoom"
+import TakeANote from "./pages/TakeANote/TakeANote";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 
@@ -19,6 +20,7 @@ import bookARoomIcon from './assets/icons/meeting.png';
 function App() {
 
   const [user, setUser] = useState(null);
+  const { } = useParams();
 
   const getUser = async() => {
     try {
@@ -60,7 +62,7 @@ function App() {
         <Route 
           exact
           path="/take-a-note"
-          element={user ? <FindARep userDetails={user} services={services}/> : <Navigate to="/login"/>}>
+          element={user ? <TakeANote userDetails={user} services={services}/> : <Navigate to="/login"/>}>
         </Route>
 
         <Route 

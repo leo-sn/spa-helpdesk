@@ -1,6 +1,6 @@
 import '../TakeANote/TakeANote.scss';
 import SideBar from '../../components/SideBar/SideBar';
-import UnderConstruction from '../../components/UncerConstruction/UnderConstruction';
+import UnderConstruction from '../../components/UnderConstruction/UnderConstruction';
 
 
 const TakeANote = (props) => {
@@ -11,7 +11,7 @@ const TakeANote = (props) => {
         <>
             <div className='home-container'>
                 <div className='workscreen-container'>
-                    <SideBar currentServices={services} userDetails={userDetails} pageActive={' active'}/>
+                    <SideBar currentServices={services} userDetails={userDetails} pageActive={'take-a-note'}/>
                     <UnderConstruction/>
                 </div>
             </div>

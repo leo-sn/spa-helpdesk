@@ -5,6 +5,7 @@ const MenuServices = (props) => {
 
     const { currentServices, pageActive } = props;
 
+    
     return (
         <div className='services-tab-container'>
         {currentServices.map((service) => {

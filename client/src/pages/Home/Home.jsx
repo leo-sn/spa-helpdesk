@@ -11,7 +11,7 @@ const Home = (props) => {
         <>
             <div className='home-container'>
                 <div className='workscreen-container'>
-                    <SideBar currentServices={services} userDetails={userDetails} pageActive={' active'}/>
+                    <SideBar currentServices={services} userDetails={userDetails} pageActive={'home'}/>
                     <WorkStation/>
                 </div>
             </div>
