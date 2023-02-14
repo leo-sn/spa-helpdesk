@@ -1,6 +1,6 @@
 import '../Home/Home.scss';
 import SideBar from '../../components/SideBar/SideBar';
-import WorkStation from '../../components/WorkStation/WorkStation';
+import WorkStationHome from '../../components/WorkStationHome/WorkStationHome';
 
 
 const Home = (props) => {
@@ -12,7 +12,7 @@ const Home = (props) => {
             <div className='home-container'>
                 <div className='workscreen-container'>
                     <SideBar currentServices={services} userDetails={userDetails} pageActive={'home'}/>
-                    <WorkStation/>
+                    <WorkStationHome/>
                 </div>
             </div>
         </> 
