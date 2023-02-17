@@ -46,27 +46,6 @@ app.use("/auth", authRoute);
 /* ****************** */
 
 
-// const API_KEY = 'AIzaSyBycTaUKUsTtBRLjVLIeSKO_CNSR9XcFaA'
-
-// // function getCoordinates(address,country){
-// //     axios.get("https://maps.googleapis.com/maps/api/geocode/json?address="+address+'&country='+country+'&key='+API_KEY)
-// //     .then(res => {
-
-// //         const latitute = res.data.results[0].geometry.location.lat
-// //         const longitute = res.data.results[0].geometry.location.lng
-
-// //         console.log('lat and lon:', latitute,' and' ,longitute)
-// //     })
-    //   .then(data => {
-    //     const latitude = res.data.results[0].geometry.location.lat;
-    
-    //     const longitude = data.results.geometry.location.lng;
-    //     console.log({latitude, longitude})
-    //     })
-// }
-
-// getCoordinates('V6Y','ca');
-
 
 /* ****************** */
 /*    SERVER START    */
