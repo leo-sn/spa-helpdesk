@@ -1,0 +1,26 @@
+.workscreen-container{
+
+
+    &__workspace {
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        // height: 100px;
+        padding: 30px 50px;
+
+
+        &--up {
+
+            display: flex;
+            gap: 30px;
+
+        }
+
+        &--bottom {
+
+
+        }
+    }
+
+}
