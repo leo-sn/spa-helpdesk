@@ -6,8 +6,10 @@ const cookieSession = require("cookie-session");
 const app = express();
 const axios = require("axios");
 
+
 const passportSetup = require("./passport")
 const authRoute = require("./routes/auth");
+const findARepRoute = require("./routes/findarep");
 
 /* ****************** */
 /*     MIDDLEWARE     */
@@ -39,11 +41,15 @@ const port = process.env.PORT || 8080;
 /* ****************** */
 
 app.use("/auth", authRoute);
+app.use("/find-a-rep/rep-search", findARepRoute)
 
 
 /* ****************** */
 /*    SERVER RUNS     */
 /* ****************** */
+
+
+
 
 
 

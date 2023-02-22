@@ -3,6 +3,7 @@ import SideBar from '../../components/SideBar/SideBar';
 import RepsMap from '../../components/ClosestRep/ClosestRep';
 import RepsForm from '../../components/RepsForm/RepsForm';
 import RepsDisplay from '../../components/RepsDisplay/RepsDisplay';
+import axios from 'axios';
 
 import { useState } from 'react';
 
@@ -19,11 +20,16 @@ const FindARep = (props) => {
     const searchHandler = (e) => {
         e.preventDefault();
 
+        const zipcode = e.target.zipcode.value;
+        const country = e.target.country.value;
+
+        axios.get(`${process.env.REACT_APP_API_URL}/find-a-rep/rep-search?zipcode=${zipcode.toLowerCase()}&country=${country.toLowerCase()}`)
+        .then(res => {
+            console.log(res)
+        })
         //Here goes the logic to call the back-end and get the rep-data
 
-        console.log(e.target.country.value)
     }
-
     return (
         <>
             <div className='home-container'>
