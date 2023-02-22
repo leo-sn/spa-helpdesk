@@ -21,7 +21,7 @@ router.get("/", (req, res) => {
 
             for(let j=0; j<repList[i].repLocations.length; j++) {
 
-                if(repList[i].repLocations[j].toLowerCase() === `${req.query.zipcode.toLowerCase()}`){
+                if(repList[i].repLocations[j].toLowerCase() === `${req.query.zipcode.toLowerCase().slice(0,3)}`){
                     foundRep = repList[i]
                 }
             }

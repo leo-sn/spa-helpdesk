@@ -34,10 +34,11 @@
     }
 }
 
-input {
+input, select {
     border-radius: 20px;
     border: solid 1px transparent;
     padding: 10px 20px;
+    width: 100%;
 
     &:focus {
         outline: 1px solid $spa-red-light;

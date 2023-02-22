@@ -4,7 +4,7 @@ import profilePicture from '../../assets/profile-picture.jpeg';
 
 const RepsDisplay = (props) => {
 
-    const { repData } = props;
+    const { repName, repEmail, repPhone, repCountry } = props.repData;
 
     return (
 
@@ -14,13 +14,13 @@ const RepsDisplay = (props) => {
             </div>
             <div>
                 <h6>Name:</h6>
-                <p className='rep-container__picture-container--rep-data'>John Cena</p>
+                <p className='rep-container__picture-container--rep-data'>{repName}</p>
                 <h6>Phone:</h6>
-                <p className='rep-container__picture-container--rep-data'>+1 111-111-1111</p>
+                <p className='rep-container__picture-container--rep-data'>{repPhone}</p>
                 <h6>Email:</h6>
-                <p className='rep-container__picture-container--rep-data'>email@email.com</p>
+                <p className='rep-container__picture-container--rep-data'>{repEmail}</p>
                 <h6>Country:</h6>
-                <p className='rep-container__picture-container--rep-data'>Canada</p>
+                <p className='rep-container__picture-container--rep-data'>{repCountry}</p>
 
             </div>
         </div>

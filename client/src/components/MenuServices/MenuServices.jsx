@@ -8,8 +8,8 @@ const MenuServices = (props) => {
     
     return (
         <div className='services-tab-container'>
-        {currentServices.map((service) => {
-            return <Services service={service.title} icon={service.iconPath} pageActive={pageActive}/>
+        {currentServices.map((service, index) => {
+            return <Services service={service.title} icon={service.iconPath} key={index} pageActive={pageActive}/>
         })}
         </div>
     )

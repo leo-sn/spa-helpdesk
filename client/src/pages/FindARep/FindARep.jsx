@@ -9,13 +9,15 @@ import { useState } from 'react';
 
 const FindARep = (props) => {
 
-    const { repData, setRepData } = useState('');
+    const [ repData, setRepData ] = useState({
+        "repId":'',
+        "repName":'',
+        "repEmail":'',
+        "repPhone":'',
+        "repCountry":'',
+        "repPicture":''
+    });
     const { userDetails, services } = props;
-
-
-    
-
-
 
     const searchHandler = (e) => {
         e.preventDefault();
@@ -25,9 +27,16 @@ const FindARep = (props) => {
 
         axios.get(`${process.env.REACT_APP_API_URL}/find-a-rep/rep-search?zipcode=${zipcode.toLowerCase()}&country=${country.toLowerCase()}`)
         .then(res => {
-            console.log(res)
+
+            setRepData({
+                "repId":res.data.repId,
+                "repName":res.data.repName,
+                "repEmail":res.data.repEmail,
+                "repPhone":res.data.repPhone,
+                "repCountry":res.data.repCountry,
+                "repPicture":res.data.repPicture
+            })
         })
-        //Here goes the logic to call the back-end and get the rep-data
 
     }
     return (
