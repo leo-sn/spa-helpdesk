@@ -20,7 +20,6 @@ import bookARoomIcon from './assets/icons/meeting.png';
 function App() {
 
   const [user, setUser] = useState(null);
-  const { } = useParams();
 
   const getUser = async() => {
     try {

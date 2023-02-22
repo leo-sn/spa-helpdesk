@@ -1,3 +1,5 @@
+@import '../../style/partials/colors';
+
 .workstationHome-container {
     // min-width: 100vh;
     padding: 10px 30px;
@@ -8,4 +10,11 @@
 
     justify-content: center;
     align-items: center;
+
+    &--coolphrase{
+        max-width: 80%;
+        text-align: center;
+        margin-bottom: 30px;
+        color: $spa-red-light;
+    }
 }
