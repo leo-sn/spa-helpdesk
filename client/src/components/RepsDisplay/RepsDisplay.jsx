@@ -12,15 +12,15 @@ const RepsDisplay = (props) => {
             <div className='rep-container__picture-container'>
                 <img className='rep-container__picture-container--picture' src={profilePicture} alt='rep picture'/>
             </div>
-            <div>
+            <div className='rep-container__data-container'>
                 <h6>Name:</h6>
-                <p className='rep-container__picture-container--rep-data'>{repName}</p>
+                <p className='rep-container__data-container--rep-data'>{repName}</p>
                 <h6>Phone:</h6>
-                <p className='rep-container__picture-container--rep-data'>{repPhone}</p>
+                <p className='rep-container__data-container--rep-data'>{repPhone}</p>
                 <h6>Email:</h6>
-                <p className='rep-container__picture-container--rep-data'>{repEmail}</p>
+                <p className='rep-container__data-container--rep-data'>{repEmail}</p>
                 <h6>Country:</h6>
-                <p className='rep-container__picture-container--rep-data'>{repCountry}</p>
+                <p className='rep-container__data-container--rep-data'>{repCountry}</p>
 
             </div>
         </div>

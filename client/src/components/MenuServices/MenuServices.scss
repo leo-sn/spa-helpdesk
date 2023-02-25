@@ -1,5 +1,16 @@
+@import '../../style/partials/breakpoints';
+
 .services-tab-container {
     display: flex;
-    flex-direction: column;
     gap: 14px;
+}
+
+@include desktop {
+
+    .services-tab-container {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
 }

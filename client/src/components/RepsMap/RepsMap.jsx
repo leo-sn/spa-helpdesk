@@ -1,6 +1,6 @@
-import './ClosestRep.scss';
+import './RepsMap.scss';
 
-const ClosestRep = () => {
+const RepsMap = () => {
 
     return (
 
@@ -9,4 +9,4 @@ const ClosestRep = () => {
     )
 };
 
-export default ClosestRep;
+export default RepsMap;

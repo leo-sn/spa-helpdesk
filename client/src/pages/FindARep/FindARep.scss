@@ -1,26 +1,49 @@
-.workscreen-container{
+@import '../../style/partials/breakpoints';
 
+.workscreen-container {
 
     &__workspace {
 
         display: flex;
         flex-direction: column;
         width: 100%;
-        // height: 100px;
+        height: 100px;
         padding: 30px 50px;
-
 
         &--up {
 
             display: flex;
+            flex-direction: row;
             gap: 30px;
-
-        }
-
-        &--bottom {
-
-
         }
     }
+}    
 
+@include desktop { 
+    
+    .workscreen-container {
+    
+        &__workspace {
+    
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 30px 50px;
+    
+            &--up {
+                display: flex;
+                gap: 30px;
+                flex-direction: row;
+            }
+    
+            &--bottom {
+    
+    
+            }
+        }
+    
+    }
 }
+
+
+

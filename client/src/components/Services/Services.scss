@@ -1,18 +1,23 @@
-@use '../../style/partials/breakpoints' as *;
+@import '../../style/partials/breakpoints';
 @import '../../style/partials/colors';
 
 .service-selector {
 
-    height: 50px;
-    width: calc(100% + 7%);
+    height: calc(100% + 7px);
+    width: 100%;
     background-color: darkgray;
     border-bottom-right-radius: 30px;
-    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
     box-shadow: black 5px 1px 10px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 20px 0 10px;
+    justify-content: center;
+    padding: 10px 15px;
+
+    h4 {
+        display: none;
+    }
+
 
     &--icon {
         height: 38px;
@@ -24,6 +29,47 @@
     }
 }
 
+.services-tab-container {
+    height: 100%;
+
+}
+
 .active {
     background-color: $spa-red;
+}
+
+
+@include desktop {
+
+    .service-selector {
+
+        height: 50px;
+        width: calc(100% + 7%);
+        background-color: darkgray;
+        border-bottom-right-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 0px;
+        box-shadow: black 5px 1px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px 0 10px;
+
+        h4 {
+            display: block;
+        }
+    
+        &--icon {
+            height: 38px;
+            width: 38px;
+        }
+    
+        &:hover{
+            background-color: $spa-red-light;
+        }
+    }
+    
+    .active {
+        background-color: $spa-red;
+    }
 }

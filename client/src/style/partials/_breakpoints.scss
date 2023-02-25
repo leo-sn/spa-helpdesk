@@ -1,6 +1,6 @@
 $screen-mobile: 320px;
 $screen-tablet: 767px;
-$screen-desktop: 1279px;
+$screen-desktop: 1025px;
 
 @mixin mobile {
     @media screen and (min-width: $screen-mobile) {

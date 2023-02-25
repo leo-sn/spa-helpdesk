@@ -1,6 +1,6 @@
 import '../FindARep/FindARep.scss'
 import SideBar from '../../components/SideBar/SideBar';
-import RepsMap from '../../components/ClosestRep/ClosestRep';
+import RepsMap from '../../components/RepsMap/RepsMap';
 import RepsForm from '../../components/RepsForm/RepsForm';
 import RepsDisplay from '../../components/RepsDisplay/RepsDisplay';
 import axios from 'axios';
