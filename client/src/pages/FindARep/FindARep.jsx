@@ -3,11 +3,14 @@ import SideBar from '../../components/SideBar/SideBar';
 import RepsMap from '../../components/RepsMap/RepsMap';
 import RepsForm from '../../components/RepsForm/RepsForm';
 import RepsDisplay from '../../components/RepsDisplay/RepsDisplay';
+import FindARepConfigModal from '../../components/FindARepConfigModal/FindARepConfigModal';
 import axios from 'axios';
 
 import { useState } from 'react';
 
 const FindARep = (props) => {
+
+    const { userDetails, services } = props;
 
     const [ repData, setRepData ] = useState({
         "repId":'',
@@ -17,7 +20,16 @@ const FindARep = (props) => {
         "repCountry":'',
         "repPicture":''
     });
-    const { userDetails, services } = props;
+
+    const [ salesConfigModal, setSalesConfigModal ] = useState(false)
+
+    const salesConfigModalHandler = (e) => {
+
+        setSalesConfigModal(true);
+
+        console.log('settings rep clicked')
+    }
+    
 
     const searchHandler = (e) => {
         e.preventDefault();
@@ -52,9 +64,16 @@ const FindARep = (props) => {
                         <div className='workscreen-container__workspace--bottom'>
                             <RepsMap repData={repData} />
                         </div>
+                        <div className='workscreen-container__workspace--configure-container'>
+                            <p>Need to update the sales list?</p>
+                            <button className='workscreen-container__workspace--configure-button' onClick={() => {salesConfigModalHandler()}}>Click Here</button>
+                        </div>
                     </div>
                 </div>
+                {salesConfigModal && <FindARepConfigModal setSalesConfigModal={setSalesConfigModal} />}
             </div>
+
+
         </> 
     )
 }

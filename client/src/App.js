@@ -1,5 +1,5 @@
 import './App.scss';
-import { Routes, Route, Navigate, useParams } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Home from "./pages/Home/Home";

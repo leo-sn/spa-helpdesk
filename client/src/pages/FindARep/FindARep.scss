@@ -9,12 +9,31 @@
         width: 100%;
         height: 100px;
         padding: 30px 20px;
+        
 
         &--up {
 
             display: flex;
             flex-direction: row;
             gap: 30px;
+        }
+
+        &--configure-container {
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            bottom: 1.5%;
+            left: 50%;
+            transform: translateX(-50%);
+            gap: 10px;
+
+        }
+
+        &--configure-button {
+            background-color: transparent;
+            border: 0;
+            color: lightgray;
+            font-size: 16px;
         }
     }
 }    
@@ -39,6 +58,10 @@
             &--bottom {
     
     
+            }
+
+            &--configure-container {
+                transform: translateX(0%);
             }
         }
     

@@ -41,7 +41,7 @@ const port = process.env.PORT || 8080;
 /* ****************** */
 
 app.use("/auth", authRoute);
-app.use("/find-a-rep/rep-search", findARepRoute)
+app.use("/find-a-rep", findARepRoute)
 
 
 /* ****************** */

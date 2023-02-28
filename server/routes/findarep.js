@@ -10,7 +10,14 @@ function readRepDatabase() {
     return repData;
 }
 
-router.get("/", (req, res) => {
+router.get("/reps", (_req, res) => {
+
+    const repList = readRepDatabase();
+    res.status(200).json(repList);
+
+})
+
+router.get("/rep-search", (req, res) => {
     const repList = readRepDatabase();
 
     let foundRep = {};
