@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const fs = require('fs');
 const repDatabase = './data/repDatabase.json';
-
+const uniqid = require('uniqid');
 
 // Reading videos database
 function readRepDatabase() {
@@ -19,10 +19,31 @@ router.get("/reps", (_req, res) => {
 
 router.put("/reps", (req, res) => {
 
-    console.log(req.body)
-    res.status(200).json(req.body)
+    const repList = readRepDatabase();
+  
+    for(i=0; i<repList.length; i++) {
+        if(repList[i].repId === req.body.repId) {
+            repList[i] = req.body
+            break
+        }
+    }
 
+    fs.writeFileSync('./data/repDatabase.json', JSON.stringify(repList))
+
+    res.status(200).json('Rep updated successfully')
 })
+
+router.post("/reps", (req, res) => {
+    const repList = readRepDatabase();
+    req.body.repId = uniqid();
+    
+    repList.push(req.body)
+    fs.writeFileSync('./data/repDatabase.json', JSON.stringify(repList))
+
+    res.status(200).json('Rep created successfully')
+})
+
+
 
 router.get("/rep-search", (req, res) => {
     const repList = readRepDatabase();

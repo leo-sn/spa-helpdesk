@@ -13,6 +13,7 @@ const FindARepConfigModal = (props) => {
     const [repPhone, setRepPhone] = useState('');
     const [repCountry, setRepCountry] = useState('');
     const [repLocations, setRepLocations] = useState('');
+    const [repActive, setRepActive] = useState(false)
 
     const updateRepRequest = () => {
 
@@ -25,15 +26,36 @@ const FindARepConfigModal = (props) => {
             repLocations: repLocations
         }
 
-        console.log(updatedRepData);
-        axios.put(`${process.env.REACT_APP_API_URL}/find-a-rep/reps`, updatedRepData)
+        if(updatedRepData.repId != '') { // PUT request in case this is an existing REP
+            axios.put(`${process.env.REACT_APP_API_URL}/find-a-rep/reps`, updatedRepData)
+        } else {
+            axios.post(`${process.env.REACT_APP_API_URL}/find-a-rep/reps`, updatedRepData)
+        }
 
     }
 
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API_URL}/find-a-rep/reps`)
         .then(res => {
-            setRepList(res.data)
+
+            let repListPlusNew = res.data;
+            let newRep = {
+                repId: '',
+                repName: 'Add New',
+                repEmail: '',
+                repPhone: '',
+                repCountry: '',
+                repLocations: ''
+            }
+            
+            repListPlusNew.sort(function(a, b) {
+                var textA = a.repName.toUpperCase();
+                var textB = b.repName.toUpperCase();
+                return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+            })
+            repListPlusNew.unshift(newRep)
+
+            setRepList(repListPlusNew)
         })
       },[]);
 
