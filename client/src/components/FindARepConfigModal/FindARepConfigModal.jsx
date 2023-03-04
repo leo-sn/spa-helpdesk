@@ -8,6 +8,27 @@ const FindARepConfigModal = (props) => {
     const [repList, setRepList] = useState([]);
     const [selectedRep, setSelectedRep] = useState({});
 
+    const [repName, setRepName] = useState('');
+    const [repEmail, setRepEmail] = useState('');
+    const [repPhone, setRepPhone] = useState('');
+    const [repCountry, setRepCountry] = useState('');
+    const [repLocations, setRepLocations] = useState('');
+
+    const updateRepRequest = () => {
+
+        let updatedRepData = {
+            repId: selectedRep.repId,
+            repName: repName,
+            repEmail: repEmail,
+            repPhone: repPhone,
+            repCountry: repCountry,
+            repLocations: repLocations
+        }
+
+        console.log(updatedRepData);
+        axios.put(`${process.env.REACT_APP_API_URL}/find-a-rep/reps`, updatedRepData)
+
+    }
 
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API_URL}/find-a-rep/reps`)
@@ -20,22 +41,39 @@ const FindARepConfigModal = (props) => {
         <div className='sales-rep-config-container'>
             <div className='sales-rep-config-container__wrapper'>
                 <div className='sales-rep-config-container__wrapper--class-list'>
-                    {repList.map((rep) => {
-                        return <p onClick={() => {setSelectedRep(rep);console.log('selected rep', rep)}}>{rep.repName}</p>
+                    {repList.map((rep, index) => {
+                        return <p key={index} onClick={() => {
+                            setSelectedRep(rep);
+                            setRepName(rep.repName);
+                            setRepEmail(rep.repEmail);
+                            setRepCountry(rep.repCountry);
+                            setRepPhone(rep.repPhone);
+                            setRepLocations(rep.repLocations);
+                        }}>{rep.repName}</p>
                     })}
                 </div>
                 <div className='sales-rep-config-container__wrapper--update-form'>
                     <form>
                         <label>Name:</label>
-                        <input type='text' name="name" value={selectedRep.repName} onChange={(e) => {setSelectedRep({repName: e.target.value}); console.log(e.target.value)}}></input>
+                        <input type='text' name="name" value={repName} onChange={(e) => {
+                            setRepName(e.target.value);}}>
+                        </input>
                         <label>Email:</label>
-                        <input type='text' value={selectedRep.repEmail} onChange={(e) => {setSelectedRep({repEmail: e.target.value}); console.log(e.target.value)}}></input>
+                        <input type='text' value={repEmail} onChange={(e) => {
+                            setRepEmail(e.target.value);}}>
+                        </input>
                         <label>Phone:</label>
-                        <input type='text' value={selectedRep.repPhone} onChange={(e) => {setSelectedRep({repPhone: e.target.value}); console.log(e.target.value)}}></input>
+                        <input type='text' value={repPhone} onChange={(e) => {
+                            setRepPhone(e.target.value);}}>
+                        </input>
                         <label>Country:</label>
-                        <input type='text' value={selectedRep.repCountry} onChange={(e) => {setSelectedRep({repCountry: e.target.value}); console.log(e.target.value)}}></input>
+                        <input type='text' value={repCountry} onChange={(e) => {
+                            setRepCountry(e.target.value);}}>
+                        </input>
                         <label>Rep Zipcodes:</label>
-                        <textarea type='text' value={selectedRep.repLocations}></textarea>
+                        <textarea type='text' value={repLocations} onChange={(e) => {
+                            setRepLocations(e.target.value)}}>
+                        </textarea>
                     </form>
                 </div>
             </div>
@@ -45,7 +83,8 @@ const FindARepConfigModal = (props) => {
                 }}>Cancel
                 </button>
                 <button className='sales-rep-config-container__save-button' onClick={() => {
-                    props.setSalesConfigModal(false)
+                    updateRepRequest();
+                    props.setSalesConfigModal(false);
                 }}>Save
                 </button>
             </div>

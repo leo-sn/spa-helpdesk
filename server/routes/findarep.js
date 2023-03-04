@@ -17,6 +17,13 @@ router.get("/reps", (_req, res) => {
 
 })
 
+router.put("/reps", (req, res) => {
+
+    console.log(req.body)
+    res.status(200).json(req.body)
+
+})
+
 router.get("/rep-search", (req, res) => {
     const repList = readRepDatabase();
 
