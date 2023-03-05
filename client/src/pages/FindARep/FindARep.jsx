@@ -5,6 +5,7 @@ import RepsForm from '../../components/RepsForm/RepsForm';
 import RepsDisplay from '../../components/RepsDisplay/RepsDisplay';
 import FindARepConfigModal from '../../components/FindARepConfigModal/FindARepConfigModal';
 import axios from 'axios';
+import RepMapLoad from '../../components/RepMapLoad/RepMapLoad';
 
 import { useState } from 'react';
 
