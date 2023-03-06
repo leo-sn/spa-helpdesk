@@ -16,7 +16,7 @@ const DigitalWatch = () => {
 
     return (
         <div className='time'>
-            {time}
+            {ctime}
         </div>
     )
 }

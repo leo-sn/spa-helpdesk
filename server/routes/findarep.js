@@ -58,6 +58,7 @@ router.get("/rep-search", (req, res) => {
 
                 if(repList[i].repLocations[j].toLowerCase() === `${req.query.zipcode.toLowerCase().slice(0,3)}`){
                     foundRep = repList[i]
+                    console.log(foundRep)
                 }
             }
         } 

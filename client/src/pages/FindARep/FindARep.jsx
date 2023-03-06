@@ -5,8 +5,6 @@ import RepsForm from '../../components/RepsForm/RepsForm';
 import RepsDisplay from '../../components/RepsDisplay/RepsDisplay';
 import FindARepConfigModal from '../../components/FindARepConfigModal/FindARepConfigModal';
 import axios from 'axios';
-import RepMapLoad from '../../components/RepMapLoad/RepMapLoad';
-
 import { useState } from 'react';
 
 const FindARep = (props) => {
@@ -19,16 +17,16 @@ const FindARep = (props) => {
         "repEmail":'',
         "repPhone":'',
         "repCountry":'',
-        "repPicture":''
+        "repPicture":'',
+        "repGeolocation":false
     });
 
+    const [repGeolocation, setRepGeolocation] = useState({lat:25.790654,lng:-80.130045})
+    
     const [ salesConfigModal, setSalesConfigModal ] = useState(false)
 
     const salesConfigModalHandler = (e) => {
-
         setSalesConfigModal(true);
-
-        console.log('settings rep clicked')
     }
     
 
@@ -47,8 +45,11 @@ const FindARep = (props) => {
                 "repEmail":res.data.repEmail,
                 "repPhone":res.data.repPhone,
                 "repCountry":res.data.repCountry,
-                "repPicture":res.data.repPicture
+                "repPicture":res.data.repPicture,
+                "repGeolocation": res.data.repGeolocation
             })
+
+            setRepGeolocation(res.data.repGeolocation)
         })
 
     }
@@ -63,7 +64,7 @@ const FindARep = (props) => {
                             <RepsDisplay repData={repData}/>
                         </div>
                         <div className='workscreen-container__workspace--bottom'>
-                            <RepsMap repData={repData} />
+                            <RepsMap repData={repData} repLocation={repGeolocation} />
                         </div>
                         <div className='workscreen-container__workspace--configure-container'>
                             <p>Need to update the sales list?</p>
