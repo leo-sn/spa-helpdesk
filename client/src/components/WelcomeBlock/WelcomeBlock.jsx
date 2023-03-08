@@ -5,10 +5,13 @@ const WelcomeBlock = (props) => {
 
     const { userDetail } = props;
 
+    //COMPANY TITLE:
+    const companyName = 'SPA-FRONTDESK';
+
     return (
         <div className='welcome-block-container'>
             
-            <h3>SPA-FRONTDESK</h3>
+            <h3>{companyName}</h3>
             <img className='welcome-block-container--logo' src={logo}></img>
             <h5>Welcome, {userDetail.given_name}</h5>
 

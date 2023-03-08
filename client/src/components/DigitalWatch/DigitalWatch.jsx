@@ -12,6 +12,7 @@ const DigitalWatch = () => {
         setCTime(time)
     }
 
+    //RUNNING UPDATETIME EACH 1 SEC TO UPDATE THE STATE
     setInterval(updateTime,1000)
 
     return (

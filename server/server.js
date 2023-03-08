@@ -19,18 +19,19 @@ app.use(
     cookieSession({
         name: "session",
         keys: ["leo"],
-        maxAge: 24*60*60*100,
+        maxAge: 24*60*60*100, //time for the cookie to disappear
     })
 )
 
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(express.json());
+//ability to the server in receiving JSON in the body - otherwise will display as UNDEFINED
+app.use(express.json()); 
 
 app.use(
     cors({
         origin: "http://localhost:3000",
-        methods: "GET,POST,PUT,DELETE",
+        methods: `${process.env.CLIENT_URL}`,
         credentials: true,
     })
 );
@@ -43,15 +44,6 @@ const port = process.env.PORT || 8080;
 
 app.use("/auth", authRoute);
 app.use("/find-a-rep", findARepRoute)
-
-
-/* ****************** */
-/*    SERVER RUNS     */
-/* ****************** */
-
-
-
-
 
 
 /* ****************** */

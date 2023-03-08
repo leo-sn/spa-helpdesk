@@ -9,6 +9,8 @@ const SideBar = (props) => {
     const { currentServices, userDetails, pageActive } = props;
 
     const user = userDetails;
+    
+    //CALLS THE LOGOUT URL AND FORWARD TO THE LOGOUT PAGE
     const logout = () => {
         window.open(
             `${process.env.REACT_APP_API_URL}/auth/logout`,
@@ -34,5 +36,7 @@ const SideBar = (props) => {
         </>
     )
 }
+
+// Future implementation: Add the configure page to update notification-bar message.
 
 export default SideBar;

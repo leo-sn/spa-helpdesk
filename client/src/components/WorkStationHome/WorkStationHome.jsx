@@ -11,6 +11,7 @@ const WorkStationHome = () => {
 
     const [coolPhrase, setCoolPhrase] = useState()
 
+    //CALLS FOR A LIST OF PHRASES AND SELECT RANDOMLY ONE IN THE ARRAY
     useEffect(() => {
         axios.get('https://type.fit/api/quotes')
         .then(res => {
@@ -19,9 +20,6 @@ const WorkStationHome = () => {
             setCoolPhrase(res.data[random].text);
         })
     },[])
-
-
-
 
     return (
         <div className='workstationHome-container'>

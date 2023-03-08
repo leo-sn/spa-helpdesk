@@ -4,6 +4,8 @@ const DateDisplay = () => {
 
 
     const newDate = new Date().toLocaleString();
+    
+    //TRIMMING the NEWDATE OUTPUT
     const date = newDate.slice(0, newDate.indexOf(','))
 
     return (

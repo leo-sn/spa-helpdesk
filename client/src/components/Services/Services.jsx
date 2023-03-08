@@ -6,6 +6,7 @@ const Services = (props) => {
     const { service, icon, pageActive } = props;
 
     return(
+        //ADD A LIST OF SERVICES AND SET AS ACTiVE IF THE PAGE IS CURRENT
         <>
         <Link to={service.toLowerCase() === 'home' ? '/' : `/${service.toLowerCase()}`}>
             <div className={'service-selector' + (pageActive === service.toLowerCase() ? ' active' : '')}>

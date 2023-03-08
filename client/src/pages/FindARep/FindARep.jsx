@@ -25,11 +25,13 @@ const FindARep = (props) => {
     
     const [ salesConfigModal, setSalesConfigModal ] = useState(false)
 
-    const salesConfigModalHandler = (e) => {
+    //HANDLER TO DISPLAY CONFIG MODAL
+    const salesConfigModalHandler = () => {
         setSalesConfigModal(true);
     }
     
 
+    //function to handle the searched rep
     const searchHandler = (e) => {
         e.preventDefault();
 
@@ -39,17 +41,22 @@ const FindARep = (props) => {
         axios.get(`${process.env.REACT_APP_API_URL}/find-a-rep/rep-search?zipcode=${zipcode.toLowerCase()}&country=${country.toLowerCase()}`)
         .then(res => {
 
-            setRepData({
-                "repId":res.data.repId,
-                "repName":res.data.repName,
-                "repEmail":res.data.repEmail,
-                "repPhone":res.data.repPhone,
-                "repCountry":res.data.repCountry,
-                "repPicture":res.data.repPicture,
-                "repGeolocation": res.data.repGeolocation
-            })
-
-            setRepGeolocation(res.data.repGeolocation)
+            //Check the response from the server: if true display found rep, otherwise error message
+            if(res.data) {
+                setRepData({
+                    "repId":res.data.repId,
+                    "repName":res.data.repName,
+                    "repEmail":res.data.repEmail,
+                    "repPhone":res.data.repPhone,
+                    "repCountry":res.data.repCountry,
+                    "repPicture":res.data.repPicture,
+                    "repGeolocation": res.data.repGeolocation
+                })
+    
+                setRepGeolocation(res.data.repGeolocation)
+            } else {
+                alert("Rep not found for this location. Try another zip code")
+            }
         })
 
     }
@@ -74,8 +81,6 @@ const FindARep = (props) => {
                 </div>
                 {salesConfigModal && <FindARepConfigModal setSalesConfigModal={setSalesConfigModal} />}
             </div>
-
-
         </> 
     )
 }
