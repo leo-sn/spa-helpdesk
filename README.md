@@ -8,6 +8,7 @@
 - [Contact](#contact)
 - [Acknowledgements](#acknowledgements)
 - [Application](#application)
+- [Thanks](#thanks)
 
 ## Overview
 
@@ -54,5 +55,11 @@ This application uses Google APIS:
 - Update links in the .ENV files.
 - Add API keys in the .ENV files.
 - Use "npm start" for both client and server.
+
+## Thanks
+
+I would like to thank all the BrainStation team, in special the professors, that above everything were great friends, people who we look up to so we can one day become great developers.
+
+Special thanks to: Ben Mitchell, Rami Matloob, Fahd Munir, Jorge Sader, and all my classmates.
 
 <!-- TODO: List any blog posts, tutorials or plugins that you may have used to complete the project. Only list those that had a significant impact. Obviously, we all 'Google' stuff while working on our things, but maybe something in particular stood out as a 'major contributor' to your skill set for this project. -->
